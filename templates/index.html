@@ -1,0 +1,55 @@
+<!-- attendance/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Attendance Management System</h1>
+    </header>
+    <main>
+        <section id="student-section">
+            <h2>Students</h2>
+            <button onclick="fetchStudents()">Fetch Students</button>
+            <ul id="student-list"></ul>
+        </section>
+
+        <section id="attendance-section">
+            <h2>Attendance</h2>
+            <button onclick="fetchAttendance()">Fetch Attendance</button>
+            <ul id="attendance-list"></ul>
+        </section>
+
+        <section id="add-student-section">
+            <h2>Add Student</h2>
+            <form id="add-student-form" onsubmit="addStudent(event)">
+                <input type="text" id="student-name" placeholder="Name" required />
+                <input type="text" id="student-roll" placeholder="Roll Number" required />
+                <input type="email" id="student-email" placeholder="Email" required />
+                <button type="submit">Add Student</button>
+            </form>
+        </section>
+
+        <section id="mark-attendance-section">
+            <h2>Mark Attendance</h2>
+            <form id="mark-attendance-form" onsubmit="markAttendance(event)">
+                <input type="text" id="attendance-roll" placeholder="Roll Number" required />
+                <select id="attendance-status" required>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                </select>
+                <button type="submit">Mark Attendance</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Attendance Management System</p>
+    </footer>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
